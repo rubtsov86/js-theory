@@ -103,8 +103,48 @@
 // \B - не граница слова
 // test - метод RegExp для проверки присутствия совпадения
 
-const regexp = /^[^\s]+/g;
-const str = 'sadsad dsadsadsa dssadasdsa sdsd sdsdsadsa adssadsa';
+// const regexp = /^[^\s]+/g;
+// const str = 'sadsad dsadsadsa dssadasdsa sdsd sdsdsadsa adssadsa';
 
-const result = str.match(regexp);
-console.log(result);
+// const result = str.match(regexp);
+// console.log(result);
+
+// скобочные группы и обратные выражения
+
+// () - скобочная группа
+// (:?) - скобочная группа исключенная из запоминания
+// \N - обратная ссылка в шаблоне, где N - номер скобочной группы
+// (?<name>) - именованная скобочная группа, где name - имя скобочной группы
+// k<name> - обратная ссылка в скобочной группе, где name - имя скобочной группы
+
+// replace - метод замены в String, который имеет ряд спецсимволов
+// $& - вставляет все найденное совпадение
+// $` - вставляет часть строки до совпадения
+// $' - вставляет часть строки после совпадения
+// $N - обратная ссылка в шаблоне, где N - номер скобочной группы
+// $<name> - обратная ссылка в шаблоне, где name - имя скобочной группы
+
+// // const regexp = /(\w+)\s(\w+)/;
+// const regexp = /(?<first_name>\w+)\s(?<last_name>\w+)/;
+// const str = 'меня зовут Rubtsov Sergiy. А тебя?';
+
+// // const result = str.match(regexp);
+// const result = str.replace(regexp, '$<last_name>');
+// console.log(result);
+
+// альтернация
+
+// | - или (альтернация)
+// X(?=Y) - находит X, если за ним следует Y (позитивная опережающая проверка)
+// X(?!Y) - находит X, если за ним не следует Y (негативная опережающая проверка)
+// (?<=Y)X - X, если следует за Y (позитивная ретроспективная проверка)
+// (?<!Y)X - X, если не следует за Y (негативная ретроспективная проверка)
+
+// const regexp = /b|d/g;
+// const str = 'abcde';
+
+// const regexp = /(?:[01]\d|2[0-3]):[0-5]\d/g;
+// const str = 'Завтра в 09:20. Обед в 13:15. Ужин в 19:10.';
+
+// const result = str.match(regexp);
+// console.log(result);
